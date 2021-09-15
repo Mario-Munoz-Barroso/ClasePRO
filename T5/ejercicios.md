@@ -82,6 +82,74 @@ Desarrollar una clase llamada Entrada que en su método main:
 
 **Es muy parecido al ejercicio de arraylist que guardaba array de Object. En este caso se guardan en el arraylist o hashtable objetos de tipo persona**
 
+3. (Cajero Base)
+
+Realizar una aplicación que permita manejar el funcionamiento de un cajero. Para ello los requisitos que se marcan son los siguientes:
+
+- El programa tiene la capacidad de manejar las cuentas de dos bancos (BBVA y Santander). Cada banco tiene un nombre, un cif y un conjunto de cuentas
+- En cada banco los clientes pueden hacer la siguiente funcionalidad: abrir una cuenta (para lo que necesitan un dni, un pin y un saldo inicial. El ISBN será un numero aleatorio entre 1 y 10000) y cancelar una cuenta (para lo que necesitarán indicar su dni y el pin de la cuenta -la cuenta quedará eliminada del banco-)
+- Una cuenta siempre tendrá asociado un dni, un pin con el que poder operar y un saldo. Las operaciones que se pueden hacer sobre esta cuenta son: ingresar dinero (el sistema no deberá permitir ingresar un saldo negativo), sacar dinero (el sistema no deberá permitir sacar dinero si la cuenta se va a quedar en números rojos), ver un resumen de los datos de la cuelta. Para todas las operaciones a realizar sobre la cuenta el sistema pediná dni del titular - pin asociado, permitiendo la operacion si ambos son correctos.
+
+Antes de empezar a programar indica cuales son las clases, métodos, constructores y variables que tiene que tener el programa, justificando la existencia de cada una de ellas
+
+El sistema estará compuesto por un menú inicial que tendrá el siguiente aspecto
+
+````
+1 Introduce el banco con el que quieres operar
+	1. BBVA
+	2. Santander
+	
+--Seleccionado BBVA--
+1. Crear una cuenta
+2. Ingresar dinero
+3. Sacar dinero
+4. Ver cuentas de un cliente
+5. Ver todas las cuentas
+Que quieres hacer:
+
+
+-- Seleccionado crear cuenta
+Introduce DNI de titular
+Introduce pin asociado 
+Introduce saldo inicial
+--- Cuenta creada correctamente ---
+
+-- Seleccionado ingresar dinero
+Introduce DNI de titular
+Introduce pin asociado 
+Introduce saldo a ingresar
+--- Dinero ingresado correctamente ---
+
+-- Seleccionado sacar dinero
+Introduce DNI de titular
+Introduce pin asociado 
+Introduce saldo a sacar
+--- Dinero sacado correctamente ---
+
+-- Seleccionado ver cuentas cliente
+Introduce DNI de titular
+Las cuentas asociadas del cuente con DNI XXXXXXXX son:
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+--- Listadas cuentas cliente correctamente ---
+
+-- Seleccionado ver cuentas del banco
+
+Las cuentas que tiene el banco son:
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+ISBN: xxxxxxx
+Saldo: xxxxxxx
+--- Listadas cuentas correctamente ---
+````
+
+
 4. (Carrera)
 
 Desarrollar una clase Coche que tenga las siguientes características:
@@ -99,7 +167,7 @@ Desarrollar una clase Coche que tenga las siguientes características:
 	- La velocidad máxima del coche es 180, en el caso de superarla se pondrá el valor 180 y se mostrará un mensaje por pantalla
 - Un método frenar que reciba como parámetros un argumento de tipo int, que no retorne nada y realice la siguiente funcionalidad:
 	- Decrementa la velocidad en la cantidad pasada por parámetros
-	- La velocidad mínima del coche es 0, en el caso de superarla se pondrá el valor 180 y se mostrará un mensaje por pantalla
+	- La velocidad mínima del coche es 0, en el caso de superarla se pondrá el valor 0 y se mostrará un mensaje por pantalla
 - Un método parar que no recibirá nada por parámetros y que no devuelva nada. Su funcionalidad será la siguiente:
 	- Pondrá la velocidad del cocha a 0
 - Un método resetear que no reciba nada por parámetros y no devuelva nada. Su funcionalidad será la siguiente:
@@ -115,9 +183,9 @@ Desarrollar una clase Entrada que represente el punto de entrada de la aplicaci�
 	- (CocheA) Uno con el constructor por defectoç
 	- (CocheB) Uno pasando modelo, matricula y caballos
 - Muestra por pantalla los datos de los dos coches
-- Modifica la velocidad del CocheA en un número aleatorio entre 10 y 30
-- Modifica los datos del CocheB y por
+- Modifica los datos del CocheA y por
 	- Modelo, Matricula y CV
+- Modifica la velocidad del CocheA en un número aleatorio entre 10 y 30
 - Modifica la velocidad del CocheB en un número aleatorio entre 10 y 30
 - Muestra por pantalla los datos de los dos coches
 - Imprime por pantalla el siguiente mensaje, teniendo en cuenta que el coche ganador será el que más km haya recorrido
@@ -179,16 +247,28 @@ Modificar la clase Equipo para que tenga:
 - Un método que no devuelva nada y que pida por parámetros un objeto de tipo jugador. El método agregará a la lista de jugadores el pasado por parámetros
 - Un método que sea listarDelateros que no devuelva nada y muestre por consola los datos de los delantros
 
+Crear una clase partido que tenga los siguientes atributos;
+- Dos atributos de tipo equipo
+- un atibuto de tipo boolean. Representa si el partido se esta jugando o está terminado
+- un atributo de tipo int. Representa en que parte está
+- Un constructor con los dos equipos pasados por parámetros
+- Un método iniciarPartido: realiza tres ataques por cada parte
+- Un método mostrarResultado: muestra el resultado final del partido: EquipoA  XX - Equipo B XX 
+
+Implementar una funcionalidad para:
+
+- Cuando un equipo ataca marcará gol cuando su método atacar sea true y su niven de ataque sea mayor que el nivel de defensa del contrario
 	
 7. (ConsumicionAplicacion) 
 
-Créese una clase de nombre “Cuenta” que permita realizar pedidos. Para eso crea una clase "consumición "Cuenta"" que tenga los siguientes métodos y atributos:
+Créese una clase de nombre “Cuenta” que permita realizar pedidos que tenga los siguientes métodos y atributos:
 
 - Tendrá un atributo de tipo int "Identificador"
 - Tendrá un atributo de tipo boolean "Estado"
 - Tendrá un atributo de tipo "ArrayList" donde se guardarán Artículos
+- Crear un constructor que pida el identificador.
 - Crear un método que permita agregar un artículo a la lista
-- Crear un método que retorne el número de artículos que tiene la consumición 
+- Crear un método que retorne el número de artículos que tiene la cuenta 
 - Crear un método que retorne el coste total de la consumición.
 - Crear un setter para el atributo estado
 
@@ -258,7 +338,7 @@ Crear una clase entrada que tenga:
 - Agregar los tres surtidores a la gasolinera   
 - Crear un coche con tipo de gasolina 
 - Ejecutar el método ponerGasolina del coche (respotando una cantidad concreta). 
-	- Prueba todas las convinanciones para comprobar los posibles fallos del método.
+	- Prueba todas las combinación para comprobar los posibles fallos del método.
 
 10. (IMC)
 
